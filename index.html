@@ -3245,15 +3245,15 @@
         );
       }
 
-      // Show login page
-      return (
-        <div className="login-container">
-          <div className="login-box">
-            <img
-              src="https://drive.google.com/file/d/1JGMr_8lp0s7Pfi58HX1Ns66ctSwwCuGB/view?usp=drive_link"
-              alt="Logo"
-              className="login-logo"
-            />
+// Show login page
+return (
+  <div className="login-container">
+    <div className="login-box">
+      <img
+        src="logo.png" 
+        alt="Logo"
+        className="login-logo"
+      />
             <h2>Meta Online Service</h2>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
@@ -3346,32 +3346,30 @@
     }
 
     // ============= SIDEBAR =============
-    function Sidebar({ activeMenu, setActiveMenu, role, user, onLogout, collapsed, toggleCollapse }) {
-      const isAdmin = role === 'Admin';
-      const isApplicant = role === 'Applicant';
+ // ۱. لوگو را در بالای فایل خود وارد کنید (Import)
+import logoImage from './assets/logo.png'; 
 
-      return (
-        <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
-          <div className="sidebar-header">
-            <div className="sidebar-logo">
-              <img src="https://drive.google.com/file/d/1JGMr_8lp0s7Pfi58HX1Ns66ctSwwCuGB/view?usp=drive_link" alt="Meta Online Service" className="sidebar-logo-img" />
-              <span className="sidebar-logo-text">{isApplicant ? 'Applicant Portal' : 'Meta Online Service'}</span>
-            </div>
-            <button className="sidebar-toggle" onClick={toggleCollapse} title={collapsed ? 'Expand' : 'Collapse'}>
-              <i className={`fas fa-chevron-${collapsed ? 'right' : 'left'}`}></i>
-            </button>
-          </div>
-          <div className="sidebar-menu-section">
-            <div className="sidebar-menu-title">Navigation</div>
-            <ul className="sidebar-menu">
-              {/* Applicant Portal Menu */}
-              {isApplicant && (
-                <>
-                  <li>
-                    <button
-                      className={activeMenu === 'Applicant-dashboard' ? 'active' : ''}
-                      onClick={() => setActiveMenu('Applicant-dashboard')}
-                      title="My Dashboard"
+function Sidebar({ activeMenu, setActiveMenu, role, user, onLogout, collapsed, toggleCollapse }) {
+  const isAdmin = role === 'Admin';
+  const isApplicant = role === 'Applicant';
+
+  return (
+    <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
+      <div className="sidebar-header">
+        <div className="sidebar-logo">
+          {/* ۲. از متغیر وارد شده استفاده کنید */}
+          <img 
+            src={logoImage} 
+            alt="Meta Online Service" 
+            className="sidebar-logo-img" 
+          />
+          <span className="sidebar-logo-text">{isApplicant ? 'Applicant Portal' : 'Meta Online Service'}</span>
+        </div>
+        <button className="sidebar-toggle" onClick={toggleCollapse} title={collapsed ? 'Expand' : 'Collapse'}>
+          <i className={`fas fa-chevron-${collapsed ? 'right' : 'left'}`}></i>
+        </button>
+      </div>
+      {/* ... بقیه کد شما ... */}
                     >
                       <i className="fas fa-home"></i>
                       <span>My Dashboard</span>
