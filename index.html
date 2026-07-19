@@ -1,7 +1,7 @@
 <!--
-  Developed by Rameez Scripts
-  WhatsApp: https://wa.me/923224083545 (For Custom Projects)
-  YouTube: https://www.youtube.com/@rameezimdad (Subscribe for more!)
+  Developed by Meta Online Service
+  WhatsApp: https://wa.me/93730556547 (For Custom Projects)
+  YouTube: https://www.youtube.com/@metaonlineservice (Subscribe for more!)
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <title>Payslip Management System</title>
+  <title>Meta Online Service</title>
 
   <!-- CDN Dependencies -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -994,32 +994,32 @@
       margin-top: 5px;
     }
 
-    /* Employee Info Card */
-    .employee-info-card {
+    /* Applicant Info Card */
+    .Applicant-info-card {
       background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-light) 100%);
       border-radius: 4px;
       padding: 20px;
       color: white;
     }
 
-    .employee-info-header {
+    .Applicant-info-header {
       display: flex;
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
     }
 
-    .employee-avatar {
+    .Applicant-avatar {
       font-size: 60px;
       opacity: 0.9;
     }
 
-    .employee-details h4 {
+    .Applicant-details h4 {
       font-size: 22px;
       margin-bottom: 8px;
     }
 
-    .employee-details p {
+    .Applicant-details p {
       font-size: 14px;
       opacity: 0.9;
       margin: 4px 0;
@@ -1057,7 +1057,7 @@
       .section-header-buttons .btn {
         width: 100%;
       }
-      .employee-info-header {
+      .Applicant-info-header {
         flex-direction: column;
         text-align: center;
       }
@@ -1072,8 +1072,8 @@
       }
     }
 
-    /* Employee Portal Styles */
-    .employee-welcome-card {
+    /* Applicant Portal Styles */
+    .Applicant-welcome-card {
       background: linear-gradient(135deg, var(--navy-primary) 0%, var(--navy-light) 100%);
       border-radius: 8px;
       padding: 30px;
@@ -1213,7 +1213,7 @@
       color: white;
     }
 
-    .cell-employee-name {
+    .cell-Applicant-name {
       font-weight: 600;
       color: #2c3e50;
     }
@@ -1388,7 +1388,7 @@
     }
 
     @media (max-width: 768px) {
-      .employee-welcome-card {
+      .Applicant-welcome-card {
         flex-direction: column;
         text-align: center;
         padding: 20px;
@@ -1706,14 +1706,14 @@
       margin-bottom: 20px;
     }
 
-    .employee-summary {
+    .Applicant-summary {
       background: #f8f9fa;
       padding: 18px 20px;
       border-radius: 2px;
       border: 1px solid #e5e5e5;
     }
 
-    .employee-summary h3 {
+    .Applicant-summary h3 {
       font-size: 12px;
       font-weight: 700;
       color: #1a1a1a;
@@ -2037,10 +2037,10 @@
         gap: 10px !important;
         margin-bottom: 6px !important;
       }
-      .employee-summary, .net-pay-summary {
+      .Applicant-summary, .net-pay-summary {
         padding: 10px 12px !important;
       }
-      .employee-summary h3, .net-pay-summary h3 {
+      .Applicant-summary h3, .net-pay-summary h3 {
         font-size: 10px !important;
         margin-bottom: 6px !important;
       }
@@ -2589,7 +2589,7 @@
         gap: 15px;
       }
 
-      .employee-summary,
+      .Applicant-summary,
       .net-pay-summary {
         padding: 15px;
       }
@@ -2761,7 +2761,7 @@
         gap: 12px;
       }
 
-      .employee-summary,
+      .Applicant-summary,
       .net-pay-summary {
         padding: 12px;
       }
@@ -2803,7 +2803,7 @@
       const [currentUser, setCurrentUser] = useState(null);
       const [userRole, setUserRole] = useState(null);
       const [userEmail, setUserEmail] = useState(null);
-      const [employeeID, setEmployeeID] = useState(null);
+      const [ApplicantID, setApplicantID] = useState(null);
       const [isLoading, setIsLoading] = useState(true);
 
       // Check for existing session on mount
@@ -2821,7 +2821,7 @@
                 setCurrentUser(session.username);
                 setUserRole(session.role);
                 setUserEmail(session.email || null);
-                setEmployeeID(session.employeeID || null);
+                setApplicantID(session.ApplicantID || null);
               } else {
                 // Session expired, clear it
                 localStorage.removeItem(SESSION_KEY);
@@ -2843,7 +2843,7 @@
           username: username,
           role: role,
           email: email || '',
-          employeeID: empID || '',
+          ApplicantID: empID || '',
           expiry: new Date().getTime() + SESSION_DURATION,
           loginTime: new Date().toISOString()
         };
@@ -2852,7 +2852,7 @@
         setCurrentUser(username);
         setUserRole(role);
         setUserEmail(email || null);
-        setEmployeeID(empID || null);
+        setApplicantID(empID || null);
       };
 
       // Handle logout - clear localStorage
@@ -2862,7 +2862,7 @@
         setCurrentUser(null);
         setUserRole(null);
         setUserEmail(null);
-        setEmployeeID(null);
+        setApplicantID(null);
       };
 
       // Show loading while checking session
@@ -2886,7 +2886,7 @@
               user={currentUser}
               role={userRole}
               email={userEmail}
-              employeeID={employeeID}
+              ApplicantID={ApplicantID}
               onLogout={handleLogout}
             />
           )}
@@ -2901,7 +2901,7 @@
       const [error, setError] = useState('');
       const [loading, setLoading] = useState(false);
       const [showSearchSlip, setShowSearchSlip] = useState(false);
-      const [searchEmployeeID, setSearchEmployeeID] = useState('');
+      const [searchApplicantID, setSearchApplicantID] = useState('');
       const [searching, setSearching] = useState(false);
       const [foundPayslip, setFoundPayslip] = useState(null);
       const [allPayslips, setAllPayslips] = useState([]);
@@ -2918,7 +2918,7 @@
               return;
             }
             if (result.success) {
-              onLogin(result.username, result.role, result.email, result.employeeID);
+              onLogin(result.username, result.role, result.email, result.ApplicantID);
             } else {
               setError(result.message);
             }
@@ -2931,8 +2931,8 @@
       };
 
       const handleSearchSlip = () => {
-        if (!searchEmployeeID.trim()) {
-          Swal.fire({ icon: 'warning', text: 'Please enter an Employee ID' });
+        if (!searchApplicantID.trim()) {
+          Swal.fire({ icon: 'warning', text: 'Please enter an Case Number' });
           return;
         }
 
@@ -2965,14 +2965,14 @@
                 setAllPayslips(sortedPayslips);
               }
             } else {
-              Swal.fire({ icon: 'error', title: 'Not Found', text: result.message || 'No payslips found for this Employee ID' });
+              Swal.fire({ icon: 'error', title: 'Not Found', text: result.message || 'No payslips found for this Case Number' });
             }
           })
           .withFailureHandler((err) => {
             setSearching(false);
             Swal.fire({ icon: 'error', title: 'Error', text: err.message });
           })
-          .getPayslipByEmployeeID(searchEmployeeID);
+          .getPayslipByApplicantID(searchApplicantID);
       };
 
       const handleSelectPeriod = (index) => {
@@ -3007,7 +3007,7 @@
 
         const opt = {
           margin: [5, 12, 3, 12],
-          filename: `Payslip_${foundPayslip?.EmployeeName || 'Employee'}_${foundPayslip?.PayMonth || 'Unknown'}.pdf`,
+          filename: `Payslip_${foundPayslip?.ApplicantID || 'Applicant'}_${foundPayslip?.PayMonth || 'Unknown'}.pdf`,
           image: { type: 'jpeg', quality: 0.98 },
           html2canvas: {
             scale: 2,
@@ -3042,7 +3042,7 @@
       const handleBackToLogin = () => {
         setShowSearchSlip(false);
         setFoundPayslip(null);
-        setSearchEmployeeID('');
+        setSearchApplicantID('');
         setAllPayslips([]);
         setSelectedPeriod('');
       };
@@ -3063,12 +3063,12 @@
 
                 <form onSubmit={(e) => { e.preventDefault(); handleSearchSlip(); }}>
                   <div className="form-group">
-                    <label>Employee ID *</label>
+                    <label>Case Number *</label>
                     <input
                       type="text"
-                      value={searchEmployeeID}
-                      onChange={(e) => setSearchEmployeeID(e.target.value)}
-                      placeholder="Enter Employee ID (e.g., MLV020)"
+                      value={searchApplicantID}
+                      onChange={(e) => setSearchApplicantID(e.target.value)}
+                      placeholder="Enter Case Number (e.g., MLV020)"
                       required
                       autoFocus
                       style={{ fontSize: '18px', padding: '16px' }}
@@ -3113,7 +3113,7 @@
                 <h2 style={{ marginBottom: '10px' }}>Select Payslip</h2>
                 <p style={{ color: '#666', marginBottom: '25px', fontSize: '15px' }}>
                   <i className="fas fa-user" style={{ marginRight: '8px', color: 'var(--navy-primary)' }}></i>
-                  <strong>{allPayslips[0]?.EmployeeName}</strong> ({searchEmployeeID})
+                  <strong>{allPayslips[0]?.ApplicantID}</strong> ({searchApplicantID})
                 </p>
                 <p style={{ color: '#888', marginBottom: '20px', fontSize: '14px' }}>
                   Found <strong style={{ color: 'var(--navy-primary)' }}>{allPayslips.length}</strong> payslips. Please select a month:
@@ -3184,7 +3184,7 @@
                   <button
                     type="button"
                     className="btn btn-secondary"
-                    onClick={() => { setAllPayslips([]); setSearchEmployeeID(''); }}
+                    onClick={() => { setAllPayslips([]); setSearchApplicantID(''); }}
                     style={{ flex: 1 }}
                   >
                     <i className="fas fa-search"></i> Search Another
@@ -3227,7 +3227,7 @@
                   )}
                   <button
                     className="btn btn-secondary"
-                    onClick={() => { setFoundPayslip(null); setAllPayslips([]); setSearchEmployeeID(''); }}
+                    onClick={() => { setFoundPayslip(null); setAllPayslips([]); setSearchApplicantID(''); }}
                   >
                     <i className="fas fa-search"></i> Search Another
                   </button>
@@ -3250,11 +3250,11 @@
         <div className="login-container">
           <div className="login-box">
             <img
-              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGXxCe0WNNedmFqSWeF761f7Kshhc-NP5ChRQKz9fr97cO8VaarvD0KlCwqHojJVBWv-RAxfOqMI5rD4H78KnARyOc6QgwL1nRRFWf5xNQ1d9F9HfAoLPPGlTyP0GwNl4n-INMEsWLQ4Y7zJtz5bOdAnc2ePH9-uCRgshlo6BsS6gJEz6fhrxL-5U5O3sX/s160/channels4_profile.jpg"
+              src="https://drive.google.com/file/d/1JGMr_8lp0s7Pfi58HX1Ns66ctSwwCuGB/view?usp=drive_link"
               alt="Logo"
               className="login-logo"
             />
-            <h2>Payslip System Login</h2>
+            <h2>Meta Online Service</h2>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>Email</label>
@@ -3348,14 +3348,14 @@
     // ============= SIDEBAR =============
     function Sidebar({ activeMenu, setActiveMenu, role, user, onLogout, collapsed, toggleCollapse }) {
       const isAdmin = role === 'Admin';
-      const isEmployee = role === 'Employee';
+      const isApplicant = role === 'Applicant';
 
       return (
         <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
           <div className="sidebar-header">
             <div className="sidebar-logo">
-              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGXxCe0WNNedmFqSWeF761f7Kshhc-NP5ChRQKz9fr97cO8VaarvD0KlCwqHojJVBWv-RAxfOqMI5rD4H78KnARyOc6QgwL1nRRFWf5xNQ1d9F9HfAoLPPGlTyP0GwNl4n-INMEsWLQ4Y7zJtz5bOdAnc2ePH9-uCRgshlo6BsS6gJEz6fhrxL-5U5O3sX/s160/channels4_profile.jpg" alt="Rameez Scripts" className="sidebar-logo-img" />
-              <span className="sidebar-logo-text">{isEmployee ? 'Employee Portal' : 'Payslip System'}</span>
+              <img src="https://drive.google.com/file/d/1JGMr_8lp0s7Pfi58HX1Ns66ctSwwCuGB/view?usp=drive_link" alt="Meta Online Service" className="sidebar-logo-img" />
+              <span className="sidebar-logo-text">{isApplicant ? 'Applicant Portal' : 'Meta Online Service'}</span>
             </div>
             <button className="sidebar-toggle" onClick={toggleCollapse} title={collapsed ? 'Expand' : 'Collapse'}>
               <i className={`fas fa-chevron-${collapsed ? 'right' : 'left'}`}></i>
@@ -3364,13 +3364,13 @@
           <div className="sidebar-menu-section">
             <div className="sidebar-menu-title">Navigation</div>
             <ul className="sidebar-menu">
-              {/* Employee Portal Menu */}
-              {isEmployee && (
+              {/* Applicant Portal Menu */}
+              {isApplicant && (
                 <>
                   <li>
                     <button
-                      className={activeMenu === 'employee-dashboard' ? 'active' : ''}
-                      onClick={() => setActiveMenu('employee-dashboard')}
+                      className={activeMenu === 'Applicant-dashboard' ? 'active' : ''}
+                      onClick={() => setActiveMenu('Applicant-dashboard')}
                       title="My Dashboard"
                     >
                       <i className="fas fa-home"></i>
@@ -3379,12 +3379,12 @@
                   </li>
                   <li>
                     <button
-                      className={activeMenu === 'employee-payslips' ? 'active' : ''}
-                      onClick={() => setActiveMenu('employee-payslips')}
-                      title="My Payslips"
+                      className={activeMenu === 'Applicant-payslips' ? 'active' : ''}
+                      onClick={() => setActiveMenu('Applicant-payslips')}
+                      title="Meta"
                     >
                       <i className="fas fa-file-invoice-dollar"></i>
-                      <span>My Payslips</span>
+                      <span>Meta</span>
                     </button>
                   </li>
                 </>
@@ -3402,17 +3402,17 @@
                   </button>
                 </li>
               )}
-              {/* Admin/User Menu - Not for Employees */}
-              {!isEmployee && (
+              {/* Admin/User Menu - Not for Applicants */}
+              {!isApplicant && (
                 <>
                   <li>
                     <button
-                      className={activeMenu === 'employees' ? 'active' : ''}
-                      onClick={() => setActiveMenu('employees')}
-                      title="Employees"
+                      className={activeMenu === 'Applicants' ? 'active' : ''}
+                      onClick={() => setActiveMenu('Applicants')}
+                      title="Applicants"
                     >
                       <i className="fas fa-users"></i>
-                      <span>Employees</span>
+                      <span>Applicants</span>
                     </button>
                   </li>
                   <li>
@@ -3451,7 +3451,7 @@
                   </li>
                 </>
               )}
-              {!isEmployee && (
+              {!isApplicant && (
                 <li>
                   <button
                     className={activeMenu === 'account' ? 'active' : ''}
@@ -3476,8 +3476,8 @@
     }
 
     // ============= DASHBOARD =============
-    function Dashboard({ user, role, email, employeeID, onLogout }) {
-      const [activeMenu, setActiveMenu] = useState(role === 'Employee' ? 'employee-dashboard' : (role === 'Admin' ? 'dashboard' : 'payslips'));
+    function Dashboard({ user, role, email, ApplicantID, onLogout }) {
+      const [activeMenu, setActiveMenu] = useState(role === 'Applicant' ? 'Applicant-dashboard' : (role === 'Admin' ? 'dashboard' : 'payslips'));
       const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
       return (
@@ -3494,11 +3494,11 @@
           <div className="main-content">
             <div className="header">
               <h1>
-                <i className="fas fa-tachometer-alt"></i> {role === 'Employee' ? 'Employee Portal' : 'Payslip Management System'}
+                <i className="fas fa-tachometer-alt"></i> {role === 'Applicant' ? 'Applicant Portal' : 'Meta Online Service'}
               </h1>
               <div>Welcome, {user}</div>
             </div>
-            <MainContent activeMenu={activeMenu} user={user} role={role} email={email} employeeID={employeeID} />
+            <MainContent activeMenu={activeMenu} user={user} role={role} email={email} ApplicantID={ApplicantID} />
           </div>
           <BottomNav
             activeMenu={activeMenu}
@@ -3513,18 +3513,18 @@
     // ============= BOTTOM NAVIGATION =============
     function BottomNav({ activeMenu, setActiveMenu, role, onLogout }) {
       const isAdmin = role === 'Admin';
-      const isEmployee = role === 'Employee';
+      const isApplicant = role === 'Applicant';
 
       return (
         <nav className="bottom-nav">
           <ul className="bottom-nav-list">
-            {/* Employee Portal Navigation */}
-            {isEmployee && (
+            {/* Applicant Portal Navigation */}
+            {isApplicant && (
               <>
                 <li className="bottom-nav-item">
                   <button
-                    className={`bottom-nav-button ${activeMenu === 'employee-dashboard' ? 'active' : ''}`}
-                    onClick={() => setActiveMenu('employee-dashboard')}
+                    className={`bottom-nav-button ${activeMenu === 'Applicant-dashboard' ? 'active' : ''}`}
+                    onClick={() => setActiveMenu('Applicant-dashboard')}
                   >
                     <i className="fas fa-home"></i>
                     <span>Home</span>
@@ -3532,8 +3532,8 @@
                 </li>
                 <li className="bottom-nav-item">
                   <button
-                    className={`bottom-nav-button ${activeMenu === 'employee-payslips' ? 'active' : ''}`}
-                    onClick={() => setActiveMenu('employee-payslips')}
+                    className={`bottom-nav-button ${activeMenu === 'Applicant-payslips' ? 'active' : ''}`}
+                    onClick={() => setActiveMenu('Applicant-payslips')}
                   >
                     <i className="fas fa-file-invoice-dollar"></i>
                     <span>Payslips</span>
@@ -3551,7 +3551,7 @@
               </>
             )}
             {/* Admin/User Navigation */}
-            {!isEmployee && (
+            {!isApplicant && (
               <>
                 {isAdmin && (
                   <li className="bottom-nav-item">
@@ -3566,11 +3566,11 @@
                 )}
                 <li className="bottom-nav-item">
                   <button
-                    className={`bottom-nav-button ${activeMenu === 'employees' ? 'active' : ''}`}
-                    onClick={() => setActiveMenu('employees')}
+                    className={`bottom-nav-button ${activeMenu === 'Applicants' ? 'active' : ''}`}
+                    onClick={() => setActiveMenu('Applicants')}
                   >
                     <i className="fas fa-users"></i>
-                    <span>Employees</span>
+                    <span>Applicants</span>
                   </button>
                 </li>
                 <li className="bottom-nav-item">
@@ -3618,12 +3618,12 @@
       );
     }
 
-    function MainContent({ activeMenu, user, role, email, employeeID }) {
+    function MainContent({ activeMenu, user, role, email, ApplicantID }) {
       switch (activeMenu) {
         case 'dashboard':
           return <DashboardView user={user} role={role} />;
-        case 'employees':
-          return <EmployeesView user={user} role={role} />;
+        case 'Applicants':
+          return <ApplicantsView user={user} role={role} />;
         case 'payslips':
           return <PayslipsView user={user} role={role} />;
         case 'users':
@@ -3632,24 +3632,24 @@
           return <LogsView user={user} role={role} />;
         case 'account':
           return <AccountView user={user} role={role} email={email} />;
-        // Employee Self-Service Portal Views
-        case 'employee-dashboard':
-          return <EmployeeDashboardView user={user} email={email} employeeID={employeeID} />;
-        case 'employee-payslips':
-          return <EmployeePayslipsView user={user} email={email} employeeID={employeeID} />;
+        // Applicant Self-Service Portal Views
+        case 'Applicant-dashboard':
+          return <ApplicantDashboardView user={user} email={email} ApplicantID={ApplicantID} />;
+        case 'Applicant-payslips':
+          return <ApplicantPayslipsView user={user} email={email} ApplicantID={ApplicantID} />;
         default:
           return null;
       }
     }
 
-    // ============= EMPLOYEE SELF-SERVICE DASHBOARD =============
-    function EmployeeDashboardView({ user, email, employeeID }) {
+    // ============= Applicant SELF-SERVICE DASHBOARD =============
+    function ApplicantDashboardView({ user, email, ApplicantID }) {
       const [loading, setLoading] = useState(true);
       const [dashboardData, setDashboardData] = useState(null);
 
       useEffect(() => {
         loadDashboard();
-      }, [employeeID, email]);
+      }, [ApplicantID, email]);
 
       const loadDashboard = () => {
         setLoading(true);
@@ -3670,7 +3670,7 @@
             setLoading(false);
             Swal.fire({ icon: 'error', title: 'Error', text: err.message });
           })
-          .getEmployeeDashboardStats(employeeID);
+          .getApplicantDashboardStats(ApplicantID);
       };
 
       if (loading) {
@@ -3686,15 +3686,15 @@
       return (
         <div className="data-section">
           {/* Welcome Card */}
-          <div className="employee-welcome-card">
+          <div className="Applicant-welcome-card">
             <div className="welcome-avatar">
               <i className="fas fa-user-circle"></i>
             </div>
             <div className="welcome-info">
-              <h2>Welcome, {dashboardData?.employee?.EmployeeName || user}!</h2>
-              <p><i className="fas fa-id-badge"></i> {dashboardData?.employee?.EmployeeID || employeeID}</p>
-              <p><i className="fas fa-envelope"></i> {dashboardData?.employee?.Email || email}</p>
-              <p><i className="fas fa-briefcase"></i> {dashboardData?.employee?.Position || 'Employee'}</p>
+              <h2>Welcome, {dashboardData?.Applicant?.ApplicantID || user}!</h2>
+              <p><i className="fas fa-id-badge"></i> {dashboardData?.Applicant?.ApplicantID || ApplicantID}</p>
+              <p><i className="fas fa-envelope"></i> {dashboardData?.Applicant?.Email || email}</p>
+              <p><i className="fas fa-briefcase"></i> {dashboardData?.Applicant?.Position || 'Applicant'}</p>
             </div>
           </div>
 
@@ -3761,8 +3761,8 @@
       );
     }
 
-    // ============= EMPLOYEE SELF-SERVICE PAYSLIPS =============
-    function EmployeePayslipsView({ user, email, employeeID }) {
+    // ============= Applicant SELF-SERVICE PAYSLIPS =============
+    function ApplicantPayslipsView({ user, email, ApplicantID }) {
       const [loading, setLoading] = useState(true);
       const [payslips, setPayslips] = useState([]);
       const [printPayslip, setPrintPayslip] = useState(null);
@@ -3781,7 +3781,7 @@
             }
           }
         };
-      }, [employeeID, email]);
+      }, [ApplicantID, email]);
 
       useEffect(() => {
         if (printPayslip) {
@@ -3811,7 +3811,7 @@
 
             const opt = {
               margin: [5, 12, 3, 12],
-              filename: `Payslip_${downloadPayslip?.EmployeeName || 'Employee'}_${downloadPayslip?.PayMonth?.toUpperCase() || 'Unknown'}_${downloadPayslip?.PayYear || ''}.pdf`,
+              filename: `Payslip_${downloadPayslip?.ApplicantID || 'Applicant'}_${downloadPayslip?.PayMonth?.toUpperCase() || 'Unknown'}_${downloadPayslip?.PayYear || ''}.pdf`,
               image: { type: 'jpeg', quality: 0.98 },
               html2canvas: { scale: 2, useCORS: true, logging: false, letterRendering: true },
               jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
@@ -3848,7 +3848,7 @@
             setLoading(false);
             Swal.fire({ icon: 'error', title: 'Error', text: err.message });
           })
-          .getEmployeeOwnPayslips(employeeID);
+          .getApplicantOwnPayslips(ApplicantID);
       };
 
       const initializeDataTable = (data) => {
@@ -3856,7 +3856,7 @@
           try {
             tableInstanceRef.current.destroy();
             tableInstanceRef.current = null;
-            $('#employeePayslipsTable').empty();
+            $('#ApplicantPayslipsTable').empty();
           } catch (e) {
             console.log('DataTable destroy error:', e);
           }
@@ -3864,7 +3864,7 @@
 
         setTimeout(() => {
           try {
-            const table = $('#employeePayslipsTable').DataTable({
+            const table = $('#ApplicantPayslipsTable').DataTable({
               data: data,
               destroy: true,
               columns: [
@@ -3965,8 +3965,8 @@
               order: [[1, 'desc'], [0, 'desc']]
             });
 
-            $('#employeePayslipsTable').off('click', '.action-icon');
-            $('#employeePayslipsTable').on('click', '.action-icon', function(e) {
+            $('#ApplicantPayslipsTable').off('click', '.action-icon');
+            $('#ApplicantPayslipsTable').on('click', '.action-icon', function(e) {
               e.preventDefault();
               e.stopPropagation();
               const action = $(this).data('action');
@@ -4010,7 +4010,7 @@
 
           {loading && <TableSkeleton rows={5} columns={7} />}
           <div style={{ display: loading ? 'none' : 'block' }} className="no-print">
-            <table id="employeePayslipsTable" className="display" style={{ width: '100%' }}></table>
+            <table id="ApplicantPayslipsTable" className="display" style={{ width: '100%' }}></table>
           </div>
 
           {printPayslip && <PayslipPrint payslip={printPayslip} />}
@@ -4070,12 +4070,12 @@
         chartInstanceRef.current = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['Employees', 'Payslips', 'Paid', 'Pending'],
+            labels: ['Applicants', 'Payslips', 'Paid', 'Pending'],
             datasets: [
               {
                 label: 'Active/Paid',
                 data: [
-                  data.activeEmployees || 0,
+                  data.activeApplicants || 0,
                   data.totalPayslips || 0,
                   data.paidPayslips || 0,
                   0
@@ -4089,7 +4089,7 @@
               {
                 label: 'Inactive/Pending',
                 data: [
-                  data.inactiveEmployees || 0,
+                  data.inactiveApplicants || 0,
                   0,
                   0,
                   data.pendingPayslips || 0
@@ -4175,15 +4175,15 @@
               <div className="stat-card-icon">
                 <i className="fas fa-users"></i>
               </div>
-              <div className="stat-card-value">{stats?.totalEmployees || 0}</div>
-              <div className="stat-card-label">Total Employees</div>
+              <div className="stat-card-value">{stats?.totalApplicants || 0}</div>
+              <div className="stat-card-label">Total Applicants</div>
             </div>
             <div className="stat-card">
               <div className="stat-card-icon">
                 <i className="fas fa-user-check"></i>
               </div>
-              <div className="stat-card-value">{stats?.activeEmployees || 0}</div>
-              <div className="stat-card-label">Active Employees</div>
+              <div className="stat-card-value">{stats?.activeApplicants || 0}</div>
+              <div className="stat-card-label">Active Applicants</div>
             </div>
             <div className="stat-card">
               <div className="stat-card-icon">
@@ -4228,18 +4228,18 @@
       );
     }
 
-    // ============= EMPLOYEES VIEW =============
-    function EmployeesView({ user, role }) {
+    // ============= ApplicantS VIEW =============
+    function ApplicantsView({ user, role }) {
       const [loading, setLoading] = useState(true);
       const [showModal, setShowModal] = useState(false);
-      const [editingEmployee, setEditingEmployee] = useState(null);
-      const [employees, setEmployees] = useState([]);
+      const [editingApplicant, setEditingApplicant] = useState(null);
+      const [Applicants, setApplicants] = useState([]);
       const tableInstanceRef = useRef(null);
       const [showHistoryModal, setShowHistoryModal] = useState(false);
-      const [historyEmployee, setHistoryEmployee] = useState(null);
+      const [historyApplicant, setHistoryApplicant] = useState(null);
 
       useEffect(() => {
-        loadEmployees();
+        loadApplicants();
         return () => {
           if (tableInstanceRef.current) {
             try {
@@ -4252,7 +4252,7 @@
         };
       }, []);
 
-      const loadEmployees = () => {
+      const loadApplicants = () => {
         setLoading(true);
         google.script.run
           .withSuccessHandler((result) => {
@@ -4262,7 +4262,7 @@
               return;
             }
             if (result.success) {
-              setEmployees(result.data);
+              setApplicants(result.data);
               setTimeout(() => initializeDataTable(result.data), 100);
             } else {
               Swal.fire({ icon: 'error', title: 'Error', text: result.message });
@@ -4272,7 +4272,7 @@
             setLoading(false);
             Swal.fire({ icon: 'error', title: 'Error', text: err.message });
           })
-          .getEmployees(user, role);
+          .getApplicants(user, role);
       };
 
       const initializeDataTable = (data) => {
@@ -4280,7 +4280,7 @@
           try {
             tableInstanceRef.current.destroy();
             tableInstanceRef.current = null;
-            $('#employeesTable').empty();
+            $('#ApplicantsTable').empty();
           } catch (e) {
             console.log('DataTable destroy error:', e);
           }
@@ -4288,13 +4288,13 @@
 
         setTimeout(() => {
           try {
-            const table = $('#employeesTable').DataTable({
+            const table = $('#ApplicantsTable').DataTable({
               data: data,
               destroy: true,
               columns: [
                 { data: 'ID', title: 'ID', render: (d) => `<span class="cell-id">${d}</span>` },
-                { data: 'EmployeeID', title: 'Employee ID', render: (d) => `<span class="cell-badge cell-badge-info">${d}</span>` },
-                { data: 'EmployeeName', title: 'Name', render: (d) => `<span class="cell-employee-name"><i class="fas fa-user-circle" style="margin-right: 6px; color: var(--navy-accent);"></i>${d}</span>` },
+                { data: 'ApplicantID', title: 'Case Number', render: (d) => `<span class="cell-badge cell-badge-info">${d}</span>` },
+                { data: 'ApplicantID', title: 'Name', render: (d) => `<span class="cell-Applicant-name"><i class="fas fa-user-circle" style="margin-right: 6px; color: var(--navy-accent);"></i>${d}</span>` },
                 { data: 'Email', title: 'Email', render: (d) => `<span class="cell-email"><i class="fas fa-envelope" style="margin-right: 6px; color: #7f8c8d;"></i>${d}</span>` },
                 {
                   data: 'Position',
@@ -4349,10 +4349,10 @@
                     <button class="action-icon history-icon" data-action="history" title="View Payslip History">
                       <i class="fas fa-history"></i>
                     </button>
-                    <button class="action-icon edit-icon" data-action="edit" title="Edit Employee">
+                    <button class="action-icon edit-icon" data-action="edit" title="Edit Applicant">
                       <i class="fas fa-edit"></i>
                     </button>
-                    <button class="action-icon delete-icon" data-action="delete" title="Delete Employee">
+                    <button class="action-icon delete-icon" data-action="delete" title="Delete Applicant">
                       <i class="fas fa-trash"></i>
                     </button>
                   `
@@ -4370,8 +4370,8 @@
               order: [[0, 'desc']]
             });
 
-            $('#employeesTable').off('click', '.action-icon');
-            $('#employeesTable').on('click', '.action-icon', function(e) {
+            $('#ApplicantsTable').off('click', '.action-icon');
+            $('#ApplicantsTable').on('click', '.action-icon', function(e) {
               e.preventDefault();
               e.stopPropagation();
               const action = $(this).data('action');
@@ -4386,10 +4386,10 @@
                 return;
               }
               if (action === 'history') {
-                setHistoryEmployee(rowData);
+                setHistoryApplicant(rowData);
                 setShowHistoryModal(true);
               } else if (action === 'edit') {
-                setEditingEmployee(rowData);
+                setEditingApplicant(rowData);
                 setShowModal(true);
               } else if (action === 'delete') {
                 handleDelete(rowData);
@@ -4404,9 +4404,9 @@
         }, 150);
       };
 
-      const handleSave = (employeeData) => {
-        const action = editingEmployee ? 'updateEmployee' : 'addEmployee';
-        const params = editingEmployee ? [editingEmployee.ID, employeeData, user, role] : [employeeData];
+      const handleSave = (ApplicantData) => {
+        const action = editingApplicant ? 'updateApplicant' : 'addApplicant';
+        const params = editingApplicant ? [editingApplicant.ID, ApplicantData, user, role] : [ApplicantData];
 
         google.script.run
           .withSuccessHandler((result) => {
@@ -4416,9 +4416,9 @@
             }
             if (result.success) {
               setShowModal(false);
-              setEditingEmployee(null);
+              setEditingApplicant(null);
               Swal.fire({ icon: 'success', title: 'Success!', text: result.message, timer: 2000, showConfirmButton: false });
-              setTimeout(() => loadEmployees(), 100);
+              setTimeout(() => loadApplicants(), 100);
             } else {
               Swal.fire({ icon: 'error', title: 'Error', text: result.message });
             }
@@ -4427,10 +4427,10 @@
           [action](...params);
       };
 
-      const handleDelete = (employee) => {
+      const handleDelete = (Applicant) => {
         Swal.fire({
           icon: 'warning',
-          title: 'Delete Employee?',
+          title: 'Delete Applicant?',
           text: 'This cannot be undone',
           showCancelButton: true,
           confirmButtonColor: '#ea4335',
@@ -4445,13 +4445,13 @@
                 }
                 if (r.success) {
                   Swal.fire({ icon: 'success', text: r.message, timer: 2000, showConfirmButton: false });
-                  setTimeout(() => loadEmployees(), 100);
+                  setTimeout(() => loadApplicants(), 100);
                 } else {
                   Swal.fire({ icon: 'error', title: 'Error', text: r.message });
                 }
               })
               .withFailureHandler((err) => Swal.fire({ icon: 'error', title: 'Error', text: err.message }))
-              .deleteEmployee(employee.ID, user, role);
+              .deleteApplicant(Applicant.ID, user, role);
           }
         });
       };
@@ -4460,41 +4460,41 @@
         <div className="data-section">
           <div className="section-header">
             <h2>
-              <i className="fas fa-users"></i> Employees
+              <i className="fas fa-users"></i> Applicants
             </h2>
-            <button className="btn btn-success" onClick={() => { setEditingEmployee(null); setShowModal(true); }}>
-              <i className="fas fa-plus"></i> Add Employee
+            <button className="btn btn-success" onClick={() => { setEditingApplicant(null); setShowModal(true); }}>
+              <i className="fas fa-plus"></i> Add Applicant
             </button>
           </div>
           {loading && <TableSkeleton rows={8} columns={8} />}
           <div style={{ display: loading ? 'none' : 'block' }}>
-            <table id="employeesTable" className="display" style={{ width: '100%' }}></table>
+            <table id="ApplicantsTable" className="display" style={{ width: '100%' }}></table>
           </div>
           {showModal && (
-            <EmployeeModal
-              employee={editingEmployee}
-              onClose={() => { setShowModal(false); setEditingEmployee(null); }}
+            <ApplicantModal
+              Applicant={editingApplicant}
+              onClose={() => { setShowModal(false); setEditingApplicant(null); }}
               onSave={handleSave}
             />
           )}
-          {showHistoryModal && historyEmployee && (
-            <EmployeeHistoryModal
-              employee={historyEmployee}
-              onClose={() => { setShowHistoryModal(false); setHistoryEmployee(null); }}
+          {showHistoryModal && historyApplicant && (
+            <ApplicantHistoryModal
+              Applicant={historyApplicant}
+              onClose={() => { setShowHistoryModal(false); setHistoryApplicant(null); }}
             />
           )}
         </div>
       );
     }
 
-    // ============= EMPLOYEE HISTORY MODAL =============
-    function EmployeeHistoryModal({ employee, onClose }) {
+    // ============= Applicant HISTORY MODAL =============
+    function ApplicantHistoryModal({ Applicant, onClose }) {
       const [loading, setLoading] = useState(true);
       const [historyData, setHistoryData] = useState(null);
 
       useEffect(() => {
         loadHistory();
-      }, [employee.EmployeeID]);
+      }, [Applicant.ApplicantID]);
 
       const loadHistory = () => {
         setLoading(true);
@@ -4515,7 +4515,7 @@
             setLoading(false);
             Swal.fire({ icon: 'error', title: 'Error', text: err.message });
           })
-          .getEmployeePayslipHistory(employee.EmployeeID);
+          .getApplicantPayslipHistory(Applicant.ApplicantID);
       };
 
       return (
@@ -4533,16 +4533,16 @@
                 </div>
               ) : historyData ? (
                 <>
-                  <div className="employee-info-card">
-                    <div className="employee-info-header">
-                      <div className="employee-avatar">
+                  <div className="Applicant-info-card">
+                    <div className="Applicant-info-header">
+                      <div className="Applicant-avatar">
                         <i className="fas fa-user-circle"></i>
                       </div>
-                      <div className="employee-details">
-                        <h4>{historyData.employee.EmployeeName}</h4>
-                        <p><i className="fas fa-id-badge"></i> {historyData.employee.EmployeeID}</p>
-                        <p><i className="fas fa-briefcase"></i> {historyData.employee.Position || 'N/A'}</p>
-                        <p><i className="fas fa-envelope"></i> {historyData.employee.Email}</p>
+                      <div className="Applicant-details">
+                        <h4>{historyData.Applicant.ApplicantID}</h4>
+                        <p><i className="fas fa-id-badge"></i> {historyData.Applicant.ApplicantID}</p>
+                        <p><i className="fas fa-briefcase"></i> {historyData.Applicant.Position || 'N/A'}</p>
+                        <p><i className="fas fa-envelope"></i> {historyData.Applicant.Email}</p>
                       </div>
                       <div className="total-earned">
                         <span className="label">Total Earned</span>
@@ -4591,7 +4591,7 @@
                   ) : (
                     <div style={{ textAlign: 'center', padding: '40px', color: '#999' }}>
                       <i className="fas fa-file-invoice-dollar" style={{ fontSize: '48px', marginBottom: '15px' }}></i>
-                      <p>No payslip history found for this employee</p>
+                      <p>No payslip history found for this Applicant</p>
                     </div>
                   )}
                 </>
@@ -4607,8 +4607,8 @@
       );
     }
 
-    // ============= EMPLOYEE MODAL =============
-    function EmployeeModal({ employee, onClose, onSave }) {
+    // ============= Applicant MODAL =============
+    function ApplicantModal({ Applicant, onClose, onSave }) {
       // Convert ISO date to YYYY-MM-DD for date input
       const convertISOToDateInput = (isoString) => {
         if (!isoString) return '';
@@ -4616,13 +4616,13 @@
       };
 
       const [formData, setFormData] = useState({
-        EmployeeID: employee?.EmployeeID || '',
-        EmployeeName: employee?.EmployeeName || '',
-        Email: employee?.Email || '',
-        Position: employee?.Position || '',
-        BasicSalary: employee?.BasicSalary || '',
-        Status: employee?.Status || 'Active',
-        JoinDate: convertISOToDateInput(employee?.JoinDate) || ''
+        ApplicantID: Applicant?.ApplicantID || '',
+        ApplicantID: Applicant?.ApplicantID || '',
+        Email: Applicant?.Email || '',
+        Position: Applicant?.Position || '',
+        BasicSalary: Applicant?.BasicSalary || '',
+        Status: Applicant?.Status || 'Active',
+        JoinDate: convertISOToDateInput(Applicant?.JoinDate) || ''
       });
       const [saving, setSaving] = useState(false);
 
@@ -4631,7 +4631,7 @@
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <h3>
-                <i className="fas fa-user-plus"></i> {employee ? 'Edit' : 'Add'} Employee
+                <i className="fas fa-user-plus"></i> {Applicant ? 'Edit' : 'Add'} Applicant
               </h3>
               <button className="close-btn" onClick={onClose}>
                 <i className="fas fa-times"></i>
@@ -4641,11 +4641,11 @@
               <form onSubmit={(e) => { e.preventDefault(); setSaving(true); onSave(formData); }}>
                 <div className="form-grid">
                   <div className="form-group">
-                    <label>Employee ID *</label>
+                    <label>Case Number *</label>
                     <input
                       type="text"
-                      value={formData.EmployeeID}
-                      onChange={(e) => setFormData({ ...formData, EmployeeID: e.target.value })}
+                      value={formData.ApplicantID}
+                      onChange={(e) => setFormData({ ...formData, ApplicantID: e.target.value })}
                       required
                     />
                   </div>
@@ -4653,8 +4653,8 @@
                     <label>Full Name *</label>
                     <input
                       type="text"
-                      value={formData.EmployeeName}
-                      onChange={(e) => setFormData({ ...formData, EmployeeName: e.target.value })}
+                      value={formData.ApplicantID}
+                      onChange={(e) => setFormData({ ...formData, ApplicantID: e.target.value })}
                       required
                     />
                   </div>
@@ -4740,11 +4740,11 @@
         dateFrom: '',
         dateTo: '',
         status: '',
-        employeeName: '',
+        ApplicantID: '',
         payMonth: '',
         payYear: ''
       });
-      const [uniqueEmployees, setUniqueEmployees] = useState([]);
+      const [uniqueApplicants, setUniqueApplicants] = useState([]);
       const [uniqueMonths, setUniqueMonths] = useState([]);
       const [uniqueYears, setUniqueYears] = useState([]);
 
@@ -4803,7 +4803,7 @@
 
             const opt = {
               margin: [5, 12, 3, 12],
-              filename: `Payslip_${downloadPayslip?.EmployeeName || 'Employee'}_${downloadPayslip?.PayMonth || 'Unknown'}.pdf`,
+              filename: `Payslip_${downloadPayslip?.ApplicantID || 'Applicant'}_${downloadPayslip?.PayMonth || 'Unknown'}.pdf`,
               image: { type: 'jpeg', quality: 0.98 },
               html2canvas: {
                 scale: 2,
@@ -4852,10 +4852,10 @@
               setPayslips(result.data);
 
               // Extract unique values for filter dropdowns
-              const employees = [...new Set(result.data.map(p => p.EmployeeName).filter(Boolean))];
+              const Applicants = [...new Set(result.data.map(p => p.ApplicantID).filter(Boolean))];
               const months = [...new Set(result.data.map(p => p.PayMonth).filter(Boolean))];
               const years = [...new Set(result.data.map(p => p.PayYear).filter(Boolean))].sort((a, b) => b - a);
-              setUniqueEmployees(employees);
+              setUniqueApplicants(Applicants);
               setUniqueMonths(months);
               setUniqueYears(years);
 
@@ -4898,7 +4898,7 @@
         // Column filters
         tableInstanceRef.current.columns().search('');
         if (filters.status) tableInstanceRef.current.column(7).search('^' + filters.status + '$', true, false);
-        if (filters.employeeName) tableInstanceRef.current.column(2).search(filters.employeeName);
+        if (filters.ApplicantID) tableInstanceRef.current.column(2).search(filters.ApplicantID);
         if (filters.payMonth) tableInstanceRef.current.column(3).search('^' + filters.payMonth + '$', true, false);
         if (filters.payYear) tableInstanceRef.current.column(4).search('^' + filters.payYear + '$', true, false);
 
@@ -4906,7 +4906,7 @@
       };
 
       const clearFilters = () => {
-        setFilters({ dateFrom: '', dateTo: '', status: '', employeeName: '', payMonth: '', payYear: '' });
+        setFilters({ dateFrom: '', dateTo: '', status: '', ApplicantID: '', payMonth: '', payYear: '' });
         if (tableInstanceRef.current) {
           $.fn.dataTable.ext.search = $.fn.dataTable.ext.search.filter(fn => !fn.isPayslipFilter);
           tableInstanceRef.current.columns().search('').draw();
@@ -4917,7 +4917,7 @@
         Swal.fire({
           icon: 'question',
           title: `Mark as ${newStatus}?`,
-          html: `Update status for <strong>${payslip.EmployeeName}</strong> (${payslip.PayMonth} ${payslip.PayYear}) to <strong>${newStatus}</strong>?`,
+          html: `Update status for <strong>${payslip.ApplicantID}</strong> (${payslip.PayMonth} ${payslip.PayYear}) to <strong>${newStatus}</strong>?`,
           showCancelButton: true,
           confirmButtonColor: newStatus === 'Paid' ? '#34a853' : '#fbbc04',
           confirmButtonText: `<i class="fas fa-check"></i> Yes, ${newStatus}`,
@@ -4961,8 +4961,8 @@
               destroy: true,
               columns: [
                 { data: 'ID', title: 'ID', render: (d) => `<span class="cell-id">${d}</span>` },
-                { data: 'EmployeeID', title: 'Employee ID', render: (d) => `<span class="cell-badge cell-badge-primary">${d}</span>` },
-                { data: 'EmployeeName', title: 'Employee Name', render: (d) => `<span class="cell-employee-name">${d}</span>` },
+                { data: 'ApplicantID', title: 'Case Number', render: (d) => `<span class="cell-badge cell-badge-primary">${d}</span>` },
+                { data: 'ApplicantID', title: 'Applicant Name', render: (d) => `<span class="cell-Applicant-name">${d}</span>` },
                 {
                   data: 'PayMonth',
                   title: 'Month',
@@ -5153,7 +5153,7 @@
         Swal.fire({
           icon: 'question',
           title: 'Send Payslip Email?',
-          html: `Send payslip for <strong>${payslip.EmployeeName}</strong> (${payslip.PayMonth} ${payslip.PayYear}) to their registered email?`,
+          html: `Send payslip for <strong>${payslip.ApplicantID}</strong> (${payslip.PayMonth} ${payslip.PayYear}) to their registered email?`,
           showCancelButton: true,
           confirmButtonColor: '#001f3f',
           confirmButtonText: '<i class="fas fa-envelope"></i> Send Email',
@@ -5195,9 +5195,9 @@
         });
       };
 
-      const handleSearch = (employeeID) => {
-        if (!employeeID.trim()) {
-          Swal.fire({ icon: 'warning', text: 'Please enter an Employee ID' });
+      const handleSearch = (ApplicantID) => {
+        if (!ApplicantID.trim()) {
+          Swal.fire({ icon: 'warning', text: 'Please enter an Case Number' });
           return;
         }
 
@@ -5213,14 +5213,14 @@
             if (result.success && result.data.length > 0) {
               setPrintPayslip(result.data[0]);
             } else {
-              Swal.fire({ icon: 'error', title: 'Not Found', text: result.message || 'No payslips found for this Employee ID' });
+              Swal.fire({ icon: 'error', title: 'Not Found', text: result.message || 'No payslips found for this Case Number' });
             }
           })
           .withFailureHandler((err) => {
             Swal.close();
             Swal.fire({ icon: 'error', title: 'Error', text: err.message });
           })
-          .getPayslipByEmployeeID(employeeID);
+          .getPayslipByApplicantID(ApplicantID);
       };
 
       return (
@@ -5248,17 +5248,17 @@
 
           <div className="search-box no-print">
             <h3>
-              <i className="fas fa-search"></i> Search Payslip by Employee ID
+              <i className="fas fa-search"></i> Search Payslip by Case Number
             </h3>
             <div className="search-input-group">
               <input
                 type="text"
-                id="searchEmployeeID"
-                placeholder="Enter Employee ID (e.g., MLV020)"
+                id="searchApplicantID"
+                placeholder="Enter Case Number (e.g., MLV020)"
               />
               <button
                 className="btn btn-primary"
-                onClick={() => handleSearch(document.getElementById('searchEmployeeID').value)}
+                onClick={() => handleSearch(document.getElementById('searchApplicantID').value)}
               >
                 <i className="fas fa-search"></i> Search & Print
               </button>
@@ -5294,14 +5294,14 @@
                   />
                 </div>
                 <div className="filter-group">
-                  <label><i className="fas fa-user"></i> Employee</label>
+                  <label><i className="fas fa-user"></i> Applicant</label>
                   <select
-                    value={filters.employeeName}
-                    onChange={(e) => setFilters({ ...filters, employeeName: e.target.value })}
+                    value={filters.ApplicantID}
+                    onChange={(e) => setFilters({ ...filters, ApplicantID: e.target.value })}
                     className="filter-input"
                   >
-                    <option value="">All Employees</option>
-                    {uniqueEmployees.map((emp, idx) => (
+                    <option value="">All Applicants</option>
+                    {uniqueApplicants.map((emp, idx) => (
                       <option key={idx} value={emp}>{emp}</option>
                     ))}
                   </select>
@@ -5398,7 +5398,7 @@
         Swal.fire({
           icon: 'question',
           title: 'Send Bulk Emails?',
-          html: `This will send payslip emails to <strong>all employees</strong> for <strong>${month} ${year}</strong>. Continue?`,
+          html: `This will send payslip emails to <strong>all Applicants</strong> for <strong>${month} ${year}</strong>. Continue?`,
           showCancelButton: true,
           confirmButtonColor: '#001f3f',
           confirmButtonText: '<i class="fas fa-paper-plane"></i> Send All',
@@ -5408,7 +5408,7 @@
             setSending(true);
             Swal.fire({
               title: 'Sending Emails...',
-              html: 'Please wait while we send payslip emails to all employees.',
+              html: 'Please wait while we send payslip emails to all Applicants.',
               allowOutsideClick: false,
               didOpen: () => Swal.showLoading()
             });
@@ -5452,7 +5452,7 @@
             </div>
             <div className="modal-body">
               <p style={{ marginBottom: '20px', color: '#666' }}>
-                <i className="fas fa-info-circle"></i> Send payslip emails to all employees for a specific month.
+                <i className="fas fa-info-circle"></i> Send payslip emails to all Applicants for a specific month.
               </p>
               <div className="form-grid">
                 <div className="form-group">
@@ -5548,12 +5548,12 @@
           return;
         }
 
-        const headers = ['Employee ID', 'Employee Name', 'Position', 'Gross Earnings', 'Total Deductions', 'Net Pay', 'Status'];
+        const headers = ['Case Number', 'Applicant Name', 'Position', 'Gross Earnings', 'Total Deductions', 'Net Pay', 'Status'];
         const csvContent = [
           headers.join(','),
           ...reportData.data.map(row => [
-            row.EmployeeID,
-            `"${row.EmployeeName}"`,
+            row.ApplicantID,
+            `"${row.ApplicantID}"`,
             `"${row.Position || ''}"`,
             row.GrossEarnings,
             row.TotalDeductions,
@@ -5637,8 +5637,8 @@
                     </h4>
                     <div className="summary-grid">
                       <div className="summary-card">
-                        <div className="summary-value">{reportData.summary.totalEmployees}</div>
-                        <div className="summary-label">Total Employees</div>
+                        <div className="summary-value">{reportData.summary.totalApplicants}</div>
+                        <div className="summary-label">Total Applicant Cases</div>
                       </div>
                       <div className="summary-card">
                         <div className="summary-value">${parseFloat(reportData.summary.totalGrossEarnings || 0).toFixed(2)}</div>
@@ -5670,7 +5670,7 @@
                     <table className="report-table">
                       <thead>
                         <tr>
-                          <th>Employee ID</th>
+                          <th>Case Number</th>
                           <th>Name</th>
                           <th>Position</th>
                           <th>Gross</th>
@@ -5682,8 +5682,8 @@
                       <tbody>
                         {reportData.data.map((row, idx) => (
                           <tr key={idx}>
-                            <td>{row.EmployeeID}</td>
-                            <td>{row.EmployeeName}</td>
+                            <td>{row.ApplicantID}</td>
+                            <td>{row.ApplicantID}</td>
                             <td>{row.Position || '-'}</td>
                             <td>${parseFloat(row.GrossEarnings).toFixed(2)}</td>
                             <td>${parseFloat(row.TotalDeductions).toFixed(2)}</td>
@@ -5722,8 +5722,8 @@
       };
 
       const [formData, setFormData] = useState({
-        EmployeeID: payslip?.EmployeeID || '',
-        EmployeeName: payslip?.EmployeeName || '',
+        ApplicantID: payslip?.ApplicantID || '',
+        ApplicantID: payslip?.ApplicantID || '',
         PayMonth: payslip?.PayMonth || '',
         PayYear: payslip?.PayYear || new Date().getFullYear(),
         PayDate: convertISOToDateInput(payslip?.PayDate) || '',
@@ -5740,24 +5740,24 @@
         Status: payslip?.Status || 'Pending'
       });
       const [saving, setSaving] = useState(false);
-      const [employeeData, setEmployeeData] = useState(null);
-      const [employeesList, setEmployeesList] = useState([]);
+      const [ApplicantData, setApplicantData] = useState(null);
+      const [ApplicantsList, setApplicantsList] = useState([]);
 
-      // Load employees list for autocomplete on mount
+      // Load Applicants list for autocomplete on mount
       useEffect(() => {
         google.script.run
           .withSuccessHandler((result) => {
             if (result && result.success) {
-              setEmployeesList(result.data);
+              setApplicantsList(result.data);
             }
           })
-          .withFailureHandler((err) => console.log('Failed to load employees:', err))
-          .getEmployees(user, role);
+          .withFailureHandler((err) => console.log('Failed to load Applicants:', err))
+          .getApplicants(user, role);
       }, []);
 
-      const searchEmployee = () => {
-        if (!formData.EmployeeID.trim()) {
-          Swal.fire({ icon: 'warning', text: 'Please enter an Employee ID' });
+      const searchApplicant = () => {
+        if (!formData.ApplicantID.trim()) {
+          Swal.fire({ icon: 'warning', text: 'Please enter an Case Number' });
           return;
         }
 
@@ -5768,19 +5768,19 @@
               return;
             }
             if (result.success) {
-              setEmployeeData(result.data);
+              setApplicantData(result.data);
               setFormData({
                 ...formData,
-                EmployeeName: result.data.EmployeeName,
+                ApplicantID: result.data.ApplicantID,
                 Basic: result.data.BasicSalary
               });
-              Swal.fire({ icon: 'success', text: 'Employee found!', timer: 1500, showConfirmButton: false });
+              Swal.fire({ icon: 'success', text: 'Applicant found!', timer: 1500, showConfirmButton: false });
             } else {
               Swal.fire({ icon: 'error', text: result.message });
             }
           })
           .withFailureHandler((err) => Swal.fire({ icon: 'error', text: err.message }))
-          .getEmployeeByID(formData.EmployeeID);
+          .getApplicantByID(formData.ApplicantID);
       };
 
       return (
@@ -5799,8 +5799,8 @@
                 <div className="form-grid">
                   <div className="form-group">
                     <label>
-                      Employee ID *
-                      {employeesList.length > 0 && (
+                      Case Number *
+                      {ApplicantsList.length > 0 && (
                         <span style={{ fontSize: '12px', color: '#666', marginLeft: '8px', fontWeight: 'normal' }}>
                           <i className="fas fa-info-circle"></i> Start typing to see suggestions
                         </span>
@@ -5809,52 +5809,52 @@
                     <div style={{ display: 'flex', gap: '10px' }}>
                       <input
                         type="text"
-                        value={formData.EmployeeID}
+                        value={formData.ApplicantID}
                         onChange={(e) => {
                           const value = e.target.value;
 
                           // Auto-search when user selects from datalist
-                          const matchedEmployee = employeesList.find(emp => emp.EmployeeID === value);
-                          if (matchedEmployee) {
-                            setEmployeeData(matchedEmployee);
+                          const matchedApplicant = ApplicantsList.find(emp => emp.ApplicantID === value);
+                          if (matchedApplicant) {
+                            setApplicantData(matchedApplicant);
                             setFormData(prev => ({
                               ...prev,
-                              EmployeeID: matchedEmployee.EmployeeID,
-                              EmployeeName: matchedEmployee.EmployeeName,
-                              Basic: matchedEmployee.BasicSalary
+                              ApplicantID: matchedApplicant.ApplicantID,
+                              ApplicantID: matchedApplicant.ApplicantID,
+                              Basic: matchedApplicant.BasicSalary
                             }));
                           } else {
-                            setFormData(prev => ({ ...prev, EmployeeID: value }));
+                            setFormData(prev => ({ ...prev, ApplicantID: value }));
                           }
                         }}
-                        list="employeeIdList"
-                        placeholder="Type or select Employee ID"
+                        list="ApplicantIDList"
+                        placeholder="Type or select Case Number"
                         autoComplete="off"
                         required
                       />
-                      <datalist id="employeeIdList">
-                        {employeesList.map((emp) => (
-                          <option key={emp.ID} value={emp.EmployeeID}>
-                            {emp.EmployeeName} - {emp.Position}
+                      <datalist id="ApplicantIDList">
+                        {ApplicantsList.map((emp) => (
+                          <option key={emp.ID} value={emp.ApplicantID}>
+                            {emp.ApplicantID} - {emp.Position}
                           </option>
                         ))}
                       </datalist>
-                      <button type="button" className="btn btn-secondary" onClick={searchEmployee}>
+                      <button type="button" className="btn btn-secondary" onClick={searchApplicant}>
                         <i className="fas fa-search"></i>
                       </button>
                     </div>
-                    {employeesList.length > 0 && (
+                    {ApplicantsList.length > 0 && (
                       <small style={{ color: '#666', fontSize: '12px', marginTop: '4px', display: 'block' }}>
-                        {employeesList.length} employee(s) available
+                        {ApplicantsList.length} Applicant(s) available
                       </small>
                     )}
                   </div>
                   <div className="form-group">
-                    <label>Employee Name *</label>
+                    <label>Applicant Name *</label>
                     <input
                       type="text"
-                      value={formData.EmployeeName}
-                      onChange={(e) => setFormData({ ...formData, EmployeeName: e.target.value })}
+                      value={formData.ApplicantID}
+                      onChange={(e) => setFormData({ ...formData, ApplicantID: e.target.value })}
                       required
                       readOnly
                     />
@@ -6052,8 +6052,8 @@
                   className="company-logo"
                 />
                 <div className="company-details">
-                  <h1>Rameez Scripts</h1>
-                  <p>Payslip Management System</p>
+                  <h1>Humanitarian visa process</h1>
+                  <p>Meta Online Service</p>
                 </div>
               </div>
               <div className="payslip-title">
@@ -6063,15 +6063,15 @@
             </div>
 
             <div className="payslip-top-section">
-              <div className="employee-summary">
-                <h3>EMPLOYEE SUMMARY</h3>
+              <div className="Applicant-summary">
+                <h3>Applicant SUMMARY</h3>
                 <div className="summary-row">
-                  <span className="label">Employee Name</span>
-                  <span className="value">: {payslip.EmployeeName}</span>
+                  <span className="label">Applicant Name</span>
+                  <span className="value">: {payslip.ApplicantID}</span>
                 </div>
                 <div className="summary-row">
-                  <span className="label">Employee ID</span>
-                  <span className="value">: {payslip.EmployeeID}</span>
+                  <span className="label">Case Number</span>
+                  <span className="value">: {payslip.ApplicantID}</span>
                 </div>
                 <div className="summary-row">
                   <span className="label">Pay Period</span>
@@ -6085,7 +6085,7 @@
 
               <div className="net-pay-summary">
                 <div className="net-pay-amount">${netPay.toFixed(2)}</div>
-                <div className="net-pay-label">Employee Net Pay</div>
+                <div className="net-pay-label">Applicant Net Pay</div>
                 <div className="summary-row">
                   <span className="label">Paid Days:</span>
                   <span className="value">{payslip.PaidDays}</span>
@@ -6099,7 +6099,7 @@
 
             <div className="payment-info">
                 <h3>PAYMENT DETAILS</h3>
-                <p>Payment made to employee's bank account.</p>
+                <p>Payment made to Applicant's bank account.</p>
               </div>
 
               <div className="earnings-deductions">
@@ -6166,8 +6166,8 @@
             <div className="signatures">
               <div className="signature-block">
                 <div className="signature-line"></div>
-                <div className="signature-name">{payslip.EmployeeName}</div>
-                <div className="signature-title">Employee Signature</div>
+                <div className="signature-name">{payslip.ApplicantID}</div>
+                <div className="signature-title">Applicant Signature</div>
               </div>
               <div className="signature-block">
                 <div className="signature-line"></div>
@@ -6177,10 +6177,10 @@
               <div className="signature-block">
                 <div className="signature-line">
                   <svg width="150" height="45" style={{ marginBottom: '-8px' }}>
-                    <text x="10" y="30" fontFamily="Brush Script MT, cursive" fontSize="24" fill="#1a5280" fontStyle="italic">Rameez Scripts</text>
+                    <text x="10" y="30" fontFamily="Brush Script MT, cursive" fontSize="24" fill="#1a5280" fontStyle="italic">Meta Online Service</text>
                   </svg>
                 </div>
-                <div className="signature-name">Rameez Scripts</div>
+                <div className="signature-name">Meta Online Service</div>
                 <div className="signature-title">Employer Signature</div>
               </div>
             </div>
@@ -6188,13 +6188,13 @@
             <svg className="company-stamp" width="110" height="110" viewBox="0 0 110 110">
               <circle cx="55" cy="55" r="52" fill="none" stroke="#1a5280" strokeWidth="3" />
               <circle cx="55" cy="55" r="42" fill="none" stroke="#1a5280" strokeWidth="1.5" />
-              <text x="55" y="45" textAnchor="middle" fontFamily="Arial" fontSize="11" fontWeight="bold" fill="#1a5280">Rameez Scripts</text>
+              <text x="55" y="45" textAnchor="middle" fontFamily="Arial" fontSize="11" fontWeight="bold" fill="#1a5280">Meta Online Service</text>
               <text x="55" y="65" textAnchor="middle" fontFamily="Arial" fontSize="8" fill="#1a5280">C6119208</text>
             </svg>
 
             <div className="payslip-footer">
-              <p>This is a system generated payslip. Any Queries should be notified within 24 hours</p>
-              <p>email: contact@rameezscripts.com / phone: +92 322 4083545</p>
+              <p>This is a system generated by Meta Online Service. Any Queries should be notified within 24 hours</p>
+              <p>email: Metaonlineservice3@gmail.com / phone: +93 730 556547</p>
             </div>
           </div>
         </div>
@@ -6271,7 +6271,7 @@
                     const roleConfig = {
                       'Admin': { color: '#9b59b6', icon: 'fa-user-shield' },
                       'User': { color: '#3498db', icon: 'fa-user-tie' },
-                      'Employee': { color: '#2ecc71', icon: 'fa-user' }
+                      'Applicant': { color: '#2ecc71', icon: 'fa-user' }
                     };
                     const config = roleConfig[d] || { color: '#7f8c8d', icon: 'fa-user' };
                     return `<span class="cell-role" style="background: ${config.color}; color: white; padding: 4px 12px; border-radius: 4px; font-size: 12px; font-weight: 600;"><i class="fas ${config.icon}" style="margin-right: 5px;"></i>${d}</span>`;
